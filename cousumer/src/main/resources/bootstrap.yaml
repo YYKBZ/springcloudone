@@ -1,0 +1,36 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:3344
+        namespace: 4ae60049-f926-4019-99f4-86b103be7686
+      config:
+        #文件的后缀名默认为properties
+        file-extension: yaml
+        #命名空间
+        namespace: 4ae60049-f926-4019-99f4-86b103be7686
+        #nacos地址
+        server-addr: localhost:3344
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8719
+      enabled: true
+      datasource:
+        ds1:
+          nacos:
+            server-addr: localhost:3344
+            dataId: cloudalibaba-sentinel-service
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
+            namespace: 8be5e8af-47f7-46d7-89b9-e34c2fd0cdc9
+
+  profiles:
+    #如果文件名为 consumer-dev.yaml则需要配置active
+    active: dev
+  application:
+    name: consumer
+feign:
+  sentinel:
+    enabled: true

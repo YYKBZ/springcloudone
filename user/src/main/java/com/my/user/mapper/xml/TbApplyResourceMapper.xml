@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.my.user.mapper.TbApplyResourceMapper">
+
+
+
+    <!--查询订单id小于50的-->
+    <select id="selectId" resultType="TbApplyResource">
+        select * from tb_apply_resource where applyId &gt; 50;
+    </select>
+
+
+    <select id="byId" resultType="TbApplyResource" parameterType="long">
+        select * from tb_apply_resource where applyId =#{id};
+    </select>
+</mapper>

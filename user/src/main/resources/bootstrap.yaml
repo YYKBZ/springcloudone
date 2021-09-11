@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:3344
+        namespace: 4ae60049-f926-4019-99f4-86b103be7686  #命名空间
+        file-extension: yaml
+      discovery:
+        server-addr: localhost:3344
+        namespace: 4ae60049-f926-4019-99f4-86b103be7686
+  application:
+    name: user
+  profiles:
+    active: dev
+

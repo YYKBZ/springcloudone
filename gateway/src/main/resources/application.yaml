@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:3344
+        namespace: 4ae60049-f926-4019-99f4-86b103be7686
+    gateway:
+      routes:
+        - id: user
+          uri: lb://user
+          predicates:
+            - Path=/tbApplyResource/*
+        - id: conusmer
+          uri: lb://consumer
+          predicates:
+            - Path=/feign/*
+server:
+  port: 9001

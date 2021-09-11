@@ -1,0 +1,15 @@
+server:
+  port: 9090
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/YYKBZ/config.git
+          #寻找哪个文件夹github仓库上的
+#          search-paths:
+#            - config
+          #分支
+          default-label: main
+  application:
+    name: configserver
