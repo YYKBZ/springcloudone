@@ -7,8 +7,8 @@ spring:
         git:
           uri: https://github.com/YYKBZ/config.git
           #寻找哪个文件夹github仓库上的
-#          search-paths:
-#            - config
+          search-paths:
+            - config2
           #分支
           default-label: main
   application:

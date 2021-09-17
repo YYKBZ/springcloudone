@@ -1,14 +1,16 @@
 spring:
   cloud:
     config:
+      #连接到哪个config server
       uri: http://localhost:9090
+      #格式 config-server
       name: config
-      profile: server
+      profile: dev
 server:
   port: 9999
 management:
   endpoints:
     web:
       exposure:
-        #暴露那些端口  *表示全部
+        #暴露那些端口  *表示全部 （）
         include: "*"
